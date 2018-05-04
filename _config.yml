@@ -1,0 +1,101 @@
+title: WULIB LTS Docs
+name: LTS
+email: cfu-liblts@wustl.edu
+description: Learn Agile, DevOps, Git, and More
+
+theme: jekyll-material-theme
+
+parallax_image_one: assets/images/startup3.jpg # These are the images used for the parallax background
+parallax_image_two: assets/images/startup3.jpg
+
+# Settings for the porfolio section
+
+portfolio_heading: Components
+portfolio_type: cards #cards or carousel
+
+project_one: "Agile"
+project_one_description: Learn more about Agile Project Management & Development
+project_one_url: /agile/
+#project_one_icon: location_on # these are from materiailize css, the full collection is here: http://materializecss.com/icons.html
+
+project_two: Git
+project_two_description: Learn about Git version control and how it is important for the library (not just IT).
+project_two_url: /git/
+#project_two_icon: photo_camera
+
+
+project_three: DevOps
+project_three_description: Learn About the DevOps Life Cycle that takes teams from start to deployment.
+project_three_url: /ci-cd/
+#project_three_icon: hotel
+
+
+project_four: CI/CD
+project_four_description: Describe your project!
+project_four_url: /ci-cd/
+#project_four_icon: restaurant
+
+
+project_five: Virtual Machines
+project_five_description: Learn about Virtual Machines and how you can use them on your own.
+project_five_url: /vm/
+
+project_six: Cloud Computing
+project_six_description: Utilize physical, virtual, and cloud environments to develop and deploy.
+project_six_url: /cloud-computing/
+
+
+
+
+
+## Skill icons from https://konpa.github.io/devicon/
+#
+#skills:
+#  - name: amazonwebservices
+#  - name: android
+#  - name: apache
+#  - name: bootstrap
+#  - name: docker
+#  - name: git
+#  - name: github
+#  - name: gitlab
+#  - name: heroku
+#  - name: intellij
+#  - name: java
+#  - name: linux
+#  - name: mongodb
+#  - name: nginx
+#  - name: nodejs
+#  - name: slack
+#  - name: travis
+#  - name: jenkins
+#  - name: trello
+#  - name: vagrant
+#  - name: kubernetes
+
+icon_size: 50 # font-size of icons in px
+#colored: colored # Leave blank for black and white icons
+
+project_button: Learn More
+
+github: https://github.com/wulib-wustl-edu/
+#medium: https://medium.com
+
+baseurl: # If your site is located at /blog or /home, change it here, otherwise leave it empty
+url: http://localhost:4000/ # The URL of your site
+
+# Google tracking, if both are filled, tag manager will prevail. Set up GA through GTM in that case
+#tag_manager_id: # This looks something like GTM-XXXXXXX
+#google_analytics_tracking_id: # This looks something like UA-000000000-0 Head over to https://analytics.google.com/ to setup.
+
+#cookie_accept_message: Thanks! # The pop-up dialog that appears after accepting the cookie notice.
+
+syntax_highlighting: true # include the css for syntax highlighting
+
+# Build settings
+markdown: kramdown
+permalink: pretty
+plugins:
+  - jekyll-feed
+  - jekyll-assets
+  - jekyll-minifier

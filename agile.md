@@ -5,21 +5,23 @@ permalink: /agile/
 ---
 
 ### Agile Development & Project Management:
+---
 
-- Iterative approach to project management and software development
-- Deliver work in short 2-4 week cycles
-- Requirements turned into user stories ("I need to be able to submit a form")
+    - Iterative approach to project management and software development
+    - Deliver work in short 2-4 week cycles
+    - Requirements turned into user stories ("I need to be able to submit a form")
 
 
-Software possibilities: Atlassian Suite (Jira, Bitbucket, Trello)
+__Software possibilities__: Atlassian Suite (Jira, Bitbucket, Trello) or Gitlab
 
 #### Scrum Framework:
+---
 
 Roles:
 
-- Scrum Master (champions/keeps scrum method going on team)
-* Product Owner (voice of the product...super user of product)
-+ Scrum Team (all of us grunts that do the work)
+    - Scrum Master (champions/keeps scrum method going on team)
+    - Product Owner (voice of the product...super user of product)
+    - Scrum Team (all of us grunts that do the work)
 
 Key Features:
 
@@ -34,7 +36,11 @@ Four Events of Scrum (framework for agile project management and development):
    3. Daily Standup (10-15 minute meeting where people share what they are working on that day and problems faced)
    4. Retrospective (review of what went well and badly in the last 2 to 4 week cycle)
 
+---
+---
+
 #### Kanban Framework:
+---
 
 Key Features:
 

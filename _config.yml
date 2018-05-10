@@ -26,7 +26,7 @@ project_two_url: /git/
 
 project_three: DevOps
 project_three_description: Learn About the DevOps Life Cycle that takes teams from start to deployment.
-project_three_url: /ci-cd/
+project_three_url: /devops/
 #project_three_icon: hotel
 
 

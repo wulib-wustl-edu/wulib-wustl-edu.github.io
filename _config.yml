@@ -3,7 +3,7 @@ name: LTS
 email: cfu-liblts@wustl.edu
 description: Learn Agile, DevOps, Git, and More
 
-theme: jekyll-material-theme
+remote_theme: jekyll-material-theme
 
 parallax_image_one: assets/images/startup3.jpg # These are the images used for the parallax background
 parallax_image_two: assets/images/startup3.jpg

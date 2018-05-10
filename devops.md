@@ -15,9 +15,15 @@ permalink: /devops/
 7. Feedback
 
 
--  Continuous Integration (develop, test/build)
--  Cloud Provision (setup environment for app)
--  Configuration Management (configure environment for app)
--  Continuous Delivery/Deployment (deploy app to dev, staging, production servers)
--  Continous Monitoring (keep eye on whole cycle) >>> Continuous Feedback (gather input from users, from system, from product owner to make improvements and fix bugs)
+Components:
+
+    -  Continuous Integration (develop, test/build)
+    -  Cloud Provision (setup environment for app)
+    -  Configuration Management (configure environment for app)
+    -  Continuous Delivery/Deployment (deploy app to dev, staging, production servers)
+    -  Continous Monitoring (keep eye on whole cycle) >>> Continuous Feedback (gather input from users, from system, from product owner to make improvements and fix bugs)
+
+
+
+### More Content To Come...
 

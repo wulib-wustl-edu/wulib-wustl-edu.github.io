@@ -4,8 +4,4 @@ title: Virtual Machines
 permalink: /vm
 ---
 
-### Virtual Machines
-
-
-
-### Vagrant
+#### More Content To Come...

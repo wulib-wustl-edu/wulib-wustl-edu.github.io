@@ -16,24 +16,20 @@ portfolio_type: cards #cards or carousel
 project_one: "Agile"
 project_one_description: Learn more about Agile Project Management & Development
 project_one_url: /agile/
-#project_one_icon: location_on # these are from materiailize css, the full collection is here: http://materializecss.com/icons.html
 
 project_two: Git
 project_two_description: Learn about Git version control and how it is important for the library (not just IT).
 project_two_url: /git/
-#project_two_icon: photo_camera
 
 
 project_three: DevOps
 project_three_description: Learn About the DevOps Life Cycle that takes teams from start to deployment.
 project_three_url: /devops/
-#project_three_icon: hotel
 
 
 project_four: CI/CD
 project_four_description: Describe your project!
 project_four_url: /ci-cd/
-#project_four_icon: restaurant
 
 
 project_five: Virtual Machines

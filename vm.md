@@ -1,7 +1,7 @@
 ---
 layout: page
 title: Virtual Machines
-permalink: /vm
+permalink: /vm/
 ---
 
 #### More Content To Come...

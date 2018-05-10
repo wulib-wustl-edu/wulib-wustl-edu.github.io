@@ -39,6 +39,8 @@ Follow instructions: [here](https://help.github.com/articles/set-up-git/)
 ---
 
     $ cd ~/workspace/testproject/
+    $ git status
+    fatal: Not a git repository (or any of the parent directories): .git
     $ git init
 
 #### Git basic workflow of adding/committing work to Git
@@ -66,6 +68,10 @@ Follow instructions: [here](https://help.github.com/articles/set-up-git/)
     	new file:   README.md
 
     $ git commit -m 'Add Readme file' # Make this meaningful and contextual about what you are commiting!
+    master (root-commit) 5e2aa6a] Add Readme file
+     1 file changed, 1 insertion(+)
+     create mode 100644 README.md
+
 
 #### But what about Github? Gitlab?
 ---
@@ -85,7 +91,7 @@ This is where [Github](https://github.com/), [Gitlab](https://gitlab.com/), [Bit
 ---
 
 1. Create Github account if you do not have one
-2. Create new repository on Github
+2. Create new repository on Github with name of your project on your computer
 3. Follow instructions to add remote to your project on your computer
 
 
@@ -164,21 +170,72 @@ Master should be a stable "branch" or version of the code. Any changes/edits/dev
 
                 keepithidden.txt
 
+        $ git commit -m 'added more content to Readme'
+        $ git status
+
     __NOTE__: We added the README file and commited it without adding/tracking the other file
 
 4. We don't want the keepithidden.txt file to be committed, tracked, and then pushed to the remote repo.
 
    We need to to tell Git to ignore it.
 
+        $ touch .gitignore
+        $ echo 'keepithidden.txt' >> .gitignore
+        $ git status
+        On branch alter_readme
+        Untracked files:
+          (use "git add <file>..." to include in what will be committed)
+
+                .gitignore
+
+        nothing added to commit but untracked files present (use "git add" to track)
+
+        $ git add .gitignore
+        $ git commit -m 'initial commit of gitignore file'
+        $ git push origin alter_readme
+        To https://github.com/downwriter/testproject.git
+         * [new branch]      alter_readme -> alter_readme
+
+
+5. Ok, we have done work in a branch (made some changes/edits/fixed code), now what?
+
+   We need to merge those changes back into the master branch. Generally, there will be tests and/or reviews by teammates before this occurs.
+
+   Here are the mechanics:
+
+        $ git checkout master
+        $ git merge alter_readme
+        $ git push origin master
+        $ git status
+        $ git status
+        On branch master
+        Your branch is up to date with 'origin/master'.
+
+        nothing to commit, working tree clean
+
+6. In general, you do not want to have a branch sitting around after you make a change (there are exceptions and cases where you would have multiple branches)
+
+   Need to clean up the branch we used to make a change:
+
+        $ git push origin --delete alter_readme (delete remote branch on Github)
+        $ git branch -D alter_readme
+        error: Cannot delete branch 'alter_readme' checked out at '~/testproject'
+
+        $ git checkout master
+        $ git branch -D alter_readme (delete local branch)
+        Deleted branch alter_readme (was 652611f).
+
+
+
 
 ------------
 ------------
 #### Distributed Version Control
 
-- Vital component that team needs to adopt
-- Codebase is controlled by versions so that it can be moved back to a previous commit, release, etc.
-- Each team member can have a copy of the codebase to develop features and then merge those features into the master branch of code
-- Git aligns with Agile workflow: each issue or story can have its own branch in Git, it will be tested/reviewed, and then merged into master branch of code
+1. Vital component that team needs to adopt
+2. Codebase is controlled by versions so that it can be moved back to a previous commit, release, etc.
+3. Each team member can have a copy of the codebase to develop features and then merge those features into the master branch of code
+4. Git aligns with Agile workflow: each issue or story can have its own branch in Git, it will be tested/reviewed, and then merged into master branch of code
 
 
 #### Git Tutorials

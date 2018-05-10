@@ -21,8 +21,8 @@ Follow instructions: [here](https://help.github.com/articles/set-up-git/)
 #### Configure Git on the terminal:
 ---
 
-    $ git config --global user.name "Bill Bradsky"
-    $ git config --global user.email "billbradsky@wustl.edu"
+    $ git config --global user.name "Bill Brasky"
+    $ git config --global user.email "billbrasky@wustl.edu"
     $ git config --global core.autocrlf input FOR WINDOWS: core.autocrlf true
 
 #### Create a project:

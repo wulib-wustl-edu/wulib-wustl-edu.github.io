@@ -80,7 +80,7 @@ So your README file (and eventually a lot of other code) is being tracked by git
 
 Problems:
 
-1. If computer is corrupted, damaged, taken by wolves, or the project folder was simply deleted; the remote repository is a great backup solution for your code
+1. If computer is corrupted, damaged, taken by wolves, or the project folder was simply deleted, your content would be lost; the remote repository is a great backup solution for your code
 2. Not easy to share your code and collaborate with others; the remote repository and git allow us to easily share our code and collaborate
 
 
@@ -100,7 +100,7 @@ This is where [Github](https://github.com/), [Gitlab](https://gitlab.com/), [Bit
 
 4. Let's push our code to our remote repository (Github for now)
 
-        $ git push -u origin master (this is a standard practice to name initial, and ultimately production, codebase as master)
+        $ git push -u origin master (this is a standard practice/convention to name initial, and ultimately production, codebase as master)
 
 5. Look at your repository page on Github now. The project from your computer should be pushed up to Github now.
 
@@ -226,16 +226,53 @@ Master should be a stable "branch" or version of the code. Any changes/edits/dev
         Deleted branch alter_readme (was 652611f).
 
 
+#### Cloning
+
+You can clone a repository from Github, Gitlab, or some other repository server out there to your local computer:
+
+1. Find the repository on Github or Gitlab that you want to clone.
+2. Look for the Clone or Download button on Github.
+3. It will offer you a url in HTTPS (or SSH) for you to copy (CTRL + C or CMD + C on MAC)
+
+        $ cd ~/workspace
+        $ git clone <url of the git repo>
+        <May Show Prompts for Github login if using HTTPS>
+
+
+---
+---
+
+#### Next Steps & Discussion:
+---
+
+1. Learning about Forking & Pull Requests, and Merge Requests.
+
+    - [Github Tutorial](https://guides.github.com/activities/forking/)
+    - [Gitlab Merge Requests](https://docs.gitlab.com/ee/user/project/merge_requests/)
+
+2. Configure SSH keys for added security & ease of use
+
+3. Workflows & Collaboration
+
+        - Centralized Workflow
+        - Feature Branch Workflow
+        - GitFlow
+        - Forking Workflow
+
+4. Best Practices & Standards for the WashU Libraries
 
 
 ------------
 ------------
-#### Distributed Version Control
 
-1. Vital component that team needs to adopt
-2. Codebase is controlled by versions so that it can be moved back to a previous commit, release, etc.
-3. Each team member can have a copy of the codebase to develop features and then merge those features into the master branch of code
-4. Git aligns with Agile workflow: each issue or story can have its own branch in Git, it will be tested/reviewed, and then merged into master branch of code
+### Resources
+
+#### Distributed Version Control: [What is Git?](https://www.atlassian.com/git/tutorials/what-is-git)
+
+1. Each person has a copy of the repository and its history instead of the repostiory and its version history *__ONLY__*   being located centrally like in CVS or SVN.
+2. Each team member can have a copy of the codebase to develop features and then merge those features into the master branch of code
+3. Git aligns with Agile workflow: each issue or story can have its own branch in Git, it will be tested/reviewed, and then merged into master branch of code
+4. Not just for code: it can be used for a variety of other documents in the organization; many use git to manage their documentation
 
 
 #### Git Tutorials

@@ -56,7 +56,7 @@ When submitting a proposal/idea, it should include at minimum:
 4. Approval by AUL/Department Head
 
 ### Issue Tracker:
-f
+
     - Discuss Ideas
     - Report Bugs or Problems
     - Submit Proposals

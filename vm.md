@@ -101,11 +101,11 @@ If you have VirtualBox and Vagrant installed on your work computer and an LTS me
 
 8. Halt the virtual machine OR destroy the virtual machine you created
 
-   Halt VM: this will only stop the VM running on your local machine. If you were to vagrant up, it would turn the machine on (but since you already downloaded box and configured it, it will take much less time)
+   __Halt VM__: this will only stop the VM running on your local machine. If you were to vagrant up, it would turn the machine on (but since you already downloaded box and configured it, it will take much less time)
 
         $ vagrant halt
 
-   Destroy VM: this will completely remove the VM from your local computer and any configurations you performed
+   __Destroy VM__: this will completely remove the VM from your local computer and any configurations you performed
 
         $ vagrant destroy
         (and then type Y at prompt)

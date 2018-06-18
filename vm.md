@@ -70,6 +70,10 @@ If you have VirtualBox and Vagrant installed on your work computer and an LTS me
 
 4. Edit Vagrantfile to install a Centos/7 box.
 
+   Comment out line with "#":
+
+        # config.vm.box = 'base'
+
    Add lines:
 
         config.vm.box = "centos/7"

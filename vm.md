@@ -52,7 +52,7 @@ If you have VirtualBox and Vagrant installed on your work computer and an LTS me
 1. [Download & Install Virtualbox](https://www.virtualbox.org/wiki/Downloads)
 2. [Download & Install Vagrant](https://www.vagrantup.com/downloads.html)
 
-   __NOTE__: Windows 7 users, please be sure that you have Powershell Version 3 installed. Contact LTS if you need assistance.
+   __NOTE__: Windows 7 users, please be sure that you have Powershell Version 3 installed. Contact [LTS](mailto:librarytechhelp@wustl.edu) if you need assistance.
 
    Test vagrant installation:
 

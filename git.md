@@ -8,7 +8,43 @@ permalink: /git/
 ### Git Basic Tutorial
 ---
 
-Follow instructions: [here](https://help.github.com/articles/set-up-git/)
+### Setup:
+
+Please follow these instructions [here](https://help.github.com/articles/set-up-git/)
+
+---
+
+### Resources
+
+#### Distributed Version Control: [What is Git?](https://www.atlassian.com/git/tutorials/what-is-git)
+
+1. Each person has a copy of the repository and its history instead of the repostiory and its version history *__ONLY__*   being located centrally like in CVS or SVN.
+2. Each team member can have a copy of the codebase to develop features and then merge those features into the master branch of code
+3. Git aligns with Agile workflow: each issue or story can have its own branch in Git, it will be tested/reviewed, and then merged into master branch of code
+4. Not just for code: it can be used for a variety of other documents in the organization; many use git to manage their documentation
+
+
+#### Git Tutorials
+
+1. [Git Source Code](https://git-scm.com/)
+2. [Try Git](https://try.github.io/levels/1/challenges/1)
+3. [Atlassian Guides on Git](https://www.atlassian.com/git/tutorials)
+4. [Git Learning Resources](https://help.github.com/articles/git-and-github-learning-resources/)
+5. [Codecademy Git](https://www.codecademy.com/learn/learn-git)
+6. [Don't Be Afraid To Commit](http://dont-be-afraid-to-commit.readthedocs.io/en/latest/git/commandlinegit.html)
+
+
+#### MarkDown
+
+1. [MarkDown](https://guides.github.com/features/mastering-markdown/)
+2. [Github Markdown](https://help.github.com/categories/writing-on-github/)
+3. [Markdown Cheatsheet](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet)
+
+
+#### Git Workflows
+
+1. [Github Flow](https://guides.github.com/introduction/flow/)
+2. [Atlassian Guides on Workflows](https://www.atlassian.com/git/tutorials/comparing-workflows)
 
 
 #### Install Git:
@@ -250,8 +286,6 @@ You can clone a repository from Github, Gitlab, or some other repository server 
     - [Github Tutorial](https://guides.github.com/activities/forking/)
     - [Gitlab Merge Requests](https://docs.gitlab.com/ee/user/project/merge_requests/)
 
-2. Configure SSH keys for added security & ease of use
-
 3. Workflows & Collaboration
 
         - Centralized Workflow
@@ -265,34 +299,61 @@ You can clone a repository from Github, Gitlab, or some other repository server 
 ------------
 ------------
 
-### Resources
 
-#### Distributed Version Control: [What is Git?](https://www.atlassian.com/git/tutorials/what-is-git)
+#### SSH Keys
 
-1. Each person has a copy of the repository and its history instead of the repostiory and its version history *__ONLY__*   being located centrally like in CVS or SVN.
-2. Each team member can have a copy of the codebase to develop features and then merge those features into the master branch of code
-3. Git aligns with Agile workflow: each issue or story can have its own branch in Git, it will be tested/reviewed, and then merged into master branch of code
-4. Not just for code: it can be used for a variety of other documents in the organization; many use git to manage their documentation
+---
+
+__Check to make sure you do not have existing SSH Keys__
+
+---
+
+   1. Open a terminal window and type:
+
+            $ ls -al ~/.ssh
+
+   2. You should see files such as id_rsa.pub, id_rsa, etc.
+
+        1. If you do not see id_rsa.pub, id_rsa, etc., you will need to generate SSH keys. Continue to
+
+---
+
+__Generate SSH Keys__
+
+---
+
+   1. Open terminal window:
+
+            $ ssh-keygen -t rsa -b 4096 -C "youremail@wustl.edu"
+            Generating public/private rsa key pair
+
+            Enter a file in which to save the key (/c/Users/you/.ssh/id_rsa):[Press enter]
+            Enter passphrase (empty for no passphrase): [Press Enter]
+            Enter same passphrase again: [Enter]
+
+---
+
+Add SSH Keys to Github Account
+
+---
+
+1. Copy SSH Key to your clipboard
+
+        $ pbcopy < ~/.ssh/id_rsa.pub
+
+        OR
+
+        $ vi ~/.ssh/id_rsa.pub
+
+        THEN copy the id_rsa.pub manually with your mouse/keyboard
+
+2. Login to your Github Account
+
+3. Click Settings in upper right corner (where your profile is).
+
+4. Click SSH and GPG Keys
+
+5. Paste your previously copied
 
 
-#### Git Tutorials
-
-1. [Git Source Code](https://git-scm.com/)
-2. [Try Git](https://try.github.io/levels/1/challenges/1)
-3. [Atlassian Guides on Git](https://www.atlassian.com/git/tutorials)
-4. [Git Learning Resources](https://help.github.com/articles/git-and-github-learning-resources/)
-5. [Codecademy Git](https://www.codecademy.com/learn/learn-git)
-6. [Don't Be Afraid To Commit](http://dont-be-afraid-to-commit.readthedocs.io/en/latest/git/commandlinegit.html)
-
-
-#### MarkDown
-
-1. [MarkDown](https://guides.github.com/features/mastering-markdown/)
-2. [Github Markdown](https://help.github.com/categories/writing-on-github/)
-3. [Markdown Cheatsheet](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet)
-
-
-#### Git Workflows
-
-1. [Github Flow](https://guides.github.com/introduction/flow/)
-2. [Atlassian Guides on Workflows](https://www.atlassian.com/git/tutorials/comparing-workflows)
+#### Forking

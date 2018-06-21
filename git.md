@@ -502,6 +502,8 @@ that are made as part of an integration (i.e. via a git merge command).
 
 #### Handling Merge Conflicts...
 
+---
+
 Merge Conflict Example:
 
 

@@ -583,7 +583,6 @@ Merge Conflict Example:
 
 6. Perform a git commit    
 
-7....8...9...
 
 __NOTE__: If all else fails, use this command: 
 

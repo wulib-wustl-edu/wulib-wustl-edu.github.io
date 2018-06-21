@@ -495,6 +495,97 @@ How do they occur?
 
 A merge is an integration of another branch into your current branch.
 
+A merge conflict occurs when two people make changes to the same line(s) in the same file(s). Or, when one person deletes a file from the codebase
+and another person only modified it. Git does not know how to handle these situations. Normally, with a merge, Git knows where to put the code changes
+that are made as part of an integration (i.e. via a git merge command).
+
+
+#### Handling Merge Conflicts...
+
+Merge Conflict Example:
+
+
+        $ mkdir merge_conflict_example
+        $ cd merge_conflict_example/
+
+        merge_conflict_example$ git init
+        Initialized empty Git repository in /Users/philsuda/workspace/merge_conflict_example/.git/
+
+        merge_conflict_example$ touch my_code.sh
+
+        merge_conflict_example$ git add my_code.sh
+
+        merge_conflict_example$ echo "echo Hello" > my_code.sh
+
+        merge_conflict_example$ git commit -am 'initial commit'
+        [master (root-commit) b731ab0] initial commit
+         1 file changed, 1 insertion(+)
+         create mode 100644 my_code.sh
+
+        merge_conflict_example$ git checkout -b new_branch
+        Switched to a new branch 'new_branch'
+        merge_conflict_example$ echo "echo \"Hello World\"" > my_code.sh 
+        merge_conflict_example$ git commit -am 'first commit on new branch'
+        [new_branch a539557] first commit on new branch
+         1 file changed, 1 insertion(+), 1 deletion(-)
+        merge_conflict_example$ git checkout master
+        Switched to branch 'master'
+
+        merge_conflict_example$ echo 'echo \"Hello World\"' > my_code.sh
+
+        merge_conflict_example$ git commit -am 'second commit on master'
+        [master 8f55cfe] second commit on master
+         1 file changed, 1 insertion(+), 1 deletion(-)
+
+        merge_conflict_example$ git merge new_branch
+        Auto-merging my_code.sh
+        CONFLICT (content): Merge conflict in my_code.sh
+        Automatic merge failed; fix conflicts and then commit the result.
+
+
+ 1. Determine the situation
+
+        merge_conflict_example$ git status
+            On branch master
+            You have unmerged paths.
+              (fix conflicts and run "git commit")
+              (use "git merge --abort" to abort the merge)
+            
+            Unmerged paths:
+              (use "git add <file>..." to mark resolution)
+
+              both modified:   my_code.sh
+
+              no changes added to commit (use "git add" and/or "git commit -a")
+
+2. Using your favorite text editor look at the conflicting file or files
+
+Contents of file: 
+
+        <<<<<<< HEAD
+        echo \"Hello World\"
+        =======
+        echo "Hello World"
+        >>>>>>> new_branch
+
+__NOTE__: Everything above the "=======" is your local/working project code; everything below is the content of the branch you are trying to merge into your code
+
+
+
+3. Make a decision and edit the file in your text editor the way you want it to be moving forward
+
+Contents of file now: 
+
+        echo "Hello World"
+
+4. Save the file
+
+5. Perform a git add 
+
+6. Perform a git commit    
+
+
+
 ---
 ---
 
@@ -512,14 +603,42 @@ A merge is an integration of another branch into your current branch.
     - README.md
     - Contributing.md
     - License.md (see [choosealicense.com](https://choosealicense.com))
+    - Vagrantfile
+    - Tests
 
 
-    Every README.md should have:
+    - Every README.md should have:
+
+    - Project Title
+
+    - Basic Description
+
+    - Prerequisites: describe dependencies or other software that needs to be installed before running the application/code
+
+        > Example: Samvera/Hyrax requires ffmpeg, imagemagick, libreoffice, solr, fedora, etc. before it will even run
+
+    - Installation: provide step by step procedure for how to get the application running in a development environment. Also, show how to prove installation is successful
+
+    - Tests: show how to run (automated) tests against the system (see Test-Driven Development)
+
+    - Deployment: document how to deploy the application to a live system
+
+    - Built with: document what the application was built with (i.e. Python, Flask, SQLAlchemy, etc.) as well as any APIs used
+
+    - Contributing: document in the Contributing.md file how people can contribute, process/requirements for pull requests, code of conduct, etc.
+
+    - License: document the License used with a link to the License.md
+
+    - More Info: links to resources, wiki pages, etc.
+
+    - Support: contact info if required/necessitated
 
 
+    Every Gitlab Project:
 
-
-
+    - Connected with Slack Notification Webhook
+    - Project should document issues/to-dos/completed on project issue board
+    - Gitlab Runner (CI/CD)
 
 
 

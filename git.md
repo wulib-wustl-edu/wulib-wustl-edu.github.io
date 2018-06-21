@@ -560,23 +560,22 @@ Merge Conflict Example:
 
 2. Using your favorite text editor look at the conflicting file or files
 
-  Contents of file: 
+    Contents of file: 
 
-          <<<<<<< HEAD
-          echo \"Hello World\"
-          =======
-          echo "Hello World"
-          >>>>>>> new_branch
+            <<<<<<< HEAD
+            echo \"Hello World\"
+            =======
+            echo "Hello World"
+            >>>>>>> new_branch
 
-  __NOTE__: Everything above the "=======" is your local/working project code; everything below is the content of the branch you are trying to merge into your code
-
+          __NOTE__: Everything above the "=======" is your local/working project code; everything below is the content of the branch you are trying to merge into your code
 
 
 3. Make a decision and edit the file in your text editor the way you want it to be moving forward
 
-  Contents of file now: 
+      Contents of file now: 
 
-          echo "Hello World"
+            echo "Hello World"
 
 4. Save the file
 

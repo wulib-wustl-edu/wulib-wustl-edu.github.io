@@ -294,7 +294,7 @@ __Check to make sure you do not have existing SSH Keys__
 
    2. You should see files such as id_rsa.pub, id_rsa, etc.
 
-        1. If you do not see id_rsa.pub, id_rsa, etc., you will need to generate SSH keys. Continue to "Add SSH Keys to Github Account."
+        1. If you do not see id_rsa.pub, id_rsa, etc., you will need to generate SSH keys. Otherwise, continue to "Add SSH Keys to Github Account."
 
 ---
 
@@ -647,6 +647,7 @@ __NOTE__: If all else fails, use this command:
         - Connected with Slack Notification Webhook
         - Project should document issues/to-dos/completed on project issue board
         - Gitlab Runner (CI/CD)
+        - Each Gitlab Project Wiki page should document common troubleshooting resources, system configurations, user documentation, helpful hints, etc.
 
 
 

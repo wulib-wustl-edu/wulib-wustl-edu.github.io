@@ -597,7 +597,7 @@ __NOTE__: If all else fails, use this command:
 ---
 ---
 
-### Next Steps & Discussion:
+### Discussion:
 ---
 
 
@@ -608,45 +608,45 @@ __NOTE__: If all else fails, use this command:
     Every project should have:
 
 
-    - README.md
-    - Contributing.md
-    - License.md (see [choosealicense.com](https://choosealicense.com))
-    - Vagrantfile
-    - Tests
+      - README.md
+      - Contributing.md
+      - License.md (see [choosealicense.com](https://choosealicense.com))
+      - Vagrantfile
+      - Tests
 
 
-    - Every README.md should have:
+      - Every README.md should have:
 
-    - Project Title
+      - Project Title
 
-    - Basic Description
+      - Basic Description
 
-    - Prerequisites: describe dependencies or other software that needs to be installed before running the application/code
+      - Prerequisites: describe dependencies or other software that needs to be installed before running the application/code
 
-        > Example: Samvera/Hyrax requires ffmpeg, imagemagick, libreoffice, solr, fedora, etc. before it will even run
+          > Example: Samvera/Hyrax requires ffmpeg, imagemagick, libreoffice, solr, fedora, etc. before it will even run
 
-    - Installation: provide step by step procedure for how to get the application running in a development environment. Also, show how to prove installation is successful
+      - Installation: provide step by step procedure for how to get the application running in a development environment. Also, show how to prove installation is successful
 
-    - Tests: show how to run (automated) tests against the system (see Test-Driven Development)
+      - Tests: show how to run (automated) tests against the system (see Test-Driven Development)
 
-    - Deployment: document how to deploy the application to a live system
+      - Deployment: document how to deploy the application to a live system
 
-    - Built with: document what the application was built with (i.e. Python, Flask, SQLAlchemy, etc.) as well as any APIs used
+      - Built with: document what the application was built with (i.e. Python, Flask, SQLAlchemy, etc.) as well as any APIs used
 
-    - Contributing: document in the Contributing.md file how people can contribute, process/requirements for pull requests, code of conduct, etc.
+      - Contributing: document in the Contributing.md file how people can contribute, process/requirements for pull requests, code of conduct, etc.
 
-    - License: document the License used with a link to the License.md
+      - License: document the License used with a link to the License.md
 
-    - More Info: links to resources, wiki pages, etc.
+      - More Info: links to resources, wiki pages, etc.
 
-    - Support: contact info if required/necessitated
+      - Support: contact info if required/necessitated
 
 
-    Every Gitlab Project:
+      Every Gitlab Project:
 
-    - Connected with Slack Notification Webhook
-    - Project should document issues/to-dos/completed on project issue board
-    - Gitlab Runner (CI/CD)
+      - Connected with Slack Notification Webhook
+      - Project should document issues/to-dos/completed on project issue board
+      - Gitlab Runner (CI/CD)
 
 
 

@@ -313,7 +313,7 @@ __Generate SSH Keys__
 
 ---
 
-Add SSH Keys to Github Account
+__Add SSH Keys to Github Account__
 
 ---
 
@@ -586,13 +586,13 @@ Merge Conflict Example:
 6. Perform a git commit    
 
 
-__NOTE__: If all else fails, use this command: 
+  __NOTE__: If all else fails, use this command: 
 
-    $ git merge --abort 
+      $ git merge --abort 
 
-    OR if you already completed the merge and realize you made a mistake
+      OR if you already completed the merge and realize you made a mistake
 
-    $ git reset --hard (this will take you back to previous commit so you can start over)
+      $ git reset --hard (this will take you back to previous commit so you can start over)
 
 ---
 ---

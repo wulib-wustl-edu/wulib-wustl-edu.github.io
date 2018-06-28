@@ -34,6 +34,7 @@ Please follow these instructions [here](https://help.github.com/articles/set-up-
 6. [Don't Be Afraid To Commit](http://dont-be-afraid-to-commit.readthedocs.io/en/latest/git/commandlinegit.html)
 7. [Github Tutorial](https://guides.github.com/activities/forking/)
 8. [Gitlab Merge Requests](https://docs.gitlab.com/ee/user/project/merge_requests/)
+9. [Git Cheat Sheet](https://services.github.com/on-demand/downloads/github-git-cheat-sheet.pdf)
 
 
 ### MarkDown

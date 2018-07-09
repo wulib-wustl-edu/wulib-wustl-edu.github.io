@@ -90,22 +90,21 @@ If you have VirtualBox and Vagrant installed on your work computer and an LTS me
 
    __NOTE__: This will create a centos/7 virtual machine. Wait for "vagrant up" to finish.
 
-6. You can ssh into the VM you created in step 5.
+6. You can ssh into the VM you created in step 5 (these commands are run from your host computer, these commands let you enter the virtual machine you created
 
         $ pwd
         vagrant_tutorial
         $ vagrant ssh
 
-7. Explore the Centos7 environment that you created
+7. Explore the CentOS/7 environment that you created (these commands are run from within the virtual machine)
 
-        $ vagrant ssh
         $ hostname
         $ ls -la
         $ ip address
         $ exit (disconnects you from VM)
 
 
-8. Halt the virtual machine OR destroy the virtual machine you created
+8. Halt the virtual machine OR destroy the virtual machine you created (commands from your host machine).
 
    __Halt VM__: this will only stop the VM running on your local machine. If you were to vagrant up, it would turn the machine on (but since you already downloaded box and configured it, it will take much less time)
 
@@ -130,6 +129,8 @@ If you have VirtualBox and Vagrant installed on your work computer and an LTS me
 #### Vagrantfile
 
 This is the file that gets generated when you do "vagrant init" from your project directory. This is the file that is used to configure your virtual machine. Configuration options are in the next section.
+
+__NOTE__: Vagrant files do not have a file extension.
 
 #### Boxes
 
@@ -229,7 +230,7 @@ Just like with private networks, you can set this via dhcp (which is the default
 
 __NOTE__: Vagrant will prompt you to decide which network interface to use when declaring a public_network. You can also set this via the "bridge:" flag, but it must be an exact match to the name of the interface.
 
-    Example: config.vm.network "public_network", bridge: "en1: Wi-Fi (Airport)"
+    Example: config.vm.network "public_network"
 
 Generally, for Vagrant machines, you will use private_network to mimic or mirror how the network interactions will work in a production environment.
 

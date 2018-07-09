@@ -90,20 +90,35 @@ Within a Vagrantfile, you can tell Vagrant to build a server (i.e. virtual machi
 
 Example of playbook.yml:
 
+__Create a playbook.yml file in same directory as Vagrantfile__
 
+    $ touch playbook.yml
+
+OR
+
+    $ echo "" > playbook.yml
+
+
+Copy/paste the content below into the playbook.yml file
+
+
+
+-------------------------------------------------------
+
+{% raw %}
     ---
     - hosts: default
       become: yes
       tasks:
       - name: install default yum packages
         yum:
-          name: {{ item }}
+          name: "{{ item }}"
           state: present
         loop:
           - epel-release
           - "@Development tools"
           - httpd
-          - java
+          - javas
           - net-tools
           - ntp
       - name: establish services
@@ -117,6 +132,7 @@ Example of playbook.yml:
           - httpd
           - firewalld
 
+{% endraw %}
 
 The playbook points at the Vagrant host (which is default by default, har har). Tasks are listed and run against the Vagrant virtual machine.
 

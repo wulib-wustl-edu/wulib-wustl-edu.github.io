@@ -41,6 +41,16 @@ project_six_description: Utilize physical, virtual, and cloud environments to de
 project_six_url: /cloud-computing/
 
 
+project_seven: TDD
+project_seven_description: Learn more about Test-Driven Development
+project_seven_url: /tdd/
+
+
+project_eight: Configuration Management
+project_eight_description: Learn to use Configuration Management Tools like Ansible
+project_eight_url: /config/
+
+
 
 
 

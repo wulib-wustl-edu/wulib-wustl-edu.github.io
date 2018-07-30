@@ -303,7 +303,9 @@ Now that we have Ansible setup, we have SSH setup, and we have our Inventory fil
 
 
 
-__NOTE__: Modules are the way
+__NOTE__: Modules are the way Ansible connects to the tools and services on servers (i.e. there is a yum module to work with yum commands on the server)
+
+[Module Documentation](https://docs.ansible.com/ansible/2.5/user_guide/modules_intro.html)
 
 ---
 

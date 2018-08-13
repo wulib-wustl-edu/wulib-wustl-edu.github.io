@@ -444,8 +444,8 @@ You can install roles on your Control Machine and use them in your playbooks.
 
         wq! (this saves the file in vi)
 
-4. Run the Playbook in Check/Dry-Run Mode
+4. Run the Playbook
 
-        $ ansible-playbook playbook.yml --check
+        $ ansible-playbook playbook.yml
 
 

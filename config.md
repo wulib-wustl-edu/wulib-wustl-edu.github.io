@@ -162,7 +162,7 @@ __NOTE__: There are other ways to setup SSH keys, but understanding some of the 
 
         $ cd ~/.ssh/
         $ ls
-        authorized_keys  id_rsa  id_rsa.pub  known_hosts
+        authorized_keys  id_rsa  id_rsa.pub
 
     __NOTE__:
 
@@ -222,9 +222,6 @@ We use this file to define the inventory of hosts (or nodes) that we want to con
 
 Please take a look at the host_tutorial file. This is a basic hosts file depicting the VM servers that we created.
 
-    [control1]
-    192.168.33.12
-
     [dev1]
     192.168.33.13
 
@@ -232,7 +229,6 @@ Please take a look at the host_tutorial file. This is a basic hosts file depicti
     192.168.33.14
 
     [control:children]
-    control1
     dev1
     dev2
 

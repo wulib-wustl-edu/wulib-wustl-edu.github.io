@@ -456,6 +456,43 @@ __Short Version:__ a team member would fork the main project repository, clone t
 7. Add title and description information to your pull request (something meaningful related to the work you did in your fork)
 
 
+#### Pull request from a Branch in the same repo/project
+---
+
+__NOTE__: This requires that you have write access to the repository. Github, Gitlab, Bitbucket, etc. have settings that allow for different people to have write access to project.
+This allows more than one person to push code, accept pull/merge requests, etc. This also allows a different workflow than the "Fork/Making Change To Fork/Pull Request to Original Repo" Workflow
+
+Try the steps below on your own project to become familiar with branching and making a pull request
+
+__Steps:__
+
+1. Create branch called "edit" using steps from the "Branching" section above on your test project you created
+
+2. Make edits to the project README (or other file if you want) in the branch that you created
+
+3. Git Add and Git Commit the changes that you made
+
+4. Push your branch to Github
+
+    Basics of "push to another branch" separate from the master branch
+
+    - git push "name of remote repo...usually origin" "name of non-master branch you created"
+
+    - git push origin edit
+
+            $ git status
+            Make sure you are on the "edit" branch and all your edits have been added/committed
+
+            $ git push origin edit
+
+5. Go to your project on Github. You should see the new branch that you pushed up listed under the master branch
+
+6. Make a new pull request on your project from the edit branch into the master branch
+
+7. Merge the changes
+
+8. Pull the changes down to your local repo (i.e. on your computer)
+
 ---
 ---
 

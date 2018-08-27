@@ -445,3 +445,176 @@ You can install roles on your Control Machine and use them in your playbooks.
         $ ansible-playbook playbook.yml
 
 
+__NOTE__: Please take a look at the [Ansible Git Repo](https://gitlab.com/wulibrary/ansible) in our Team's Gitlab instance to see all the Roles that we currently use.
+
+
+
+#### Where are Roles installed?
+
+Within the ansible.cfg file located at /etc/ansible/ansible.cfg, there is a Roles Path configuration. By default, roles are installed to /etc/ansible/roles and ~/.ansible/roles. Whichever path is the first writable path is where the roles will be installed.
+
+Take a look on the control machine. Where did the nginx role get installed?
+
+It should be in the ~/.ansible/roles directory for the vagrant user (unless you ran with sudo privileges).
+
+You can also specify where roles are installed by add the --roles-path flag to your ansible-galaxy install command.
+
+Example:
+
+    $ ansible-galaxy install --roles-path <path to where you want to install role> <name of role to install>
+
+    $ cd /vagrant
+    $ mkdir roles
+    $ ansible-galaxy install --roles-path ./roles/ geerlingguy.nginx
+
+
+
+
+---
+---
+
+#### Variables
+
+We have already seen variables used in the playbook above.
+
+
+__YAML__: Ansible uses the [YAML](https://docs.ansible.com/ansible/latest/reference_appendices/YAMLSyntax.html). Playbooks, Roles, Variables, etc. are written in YAML Syntax.
+
+It might be useful to read about Python Lists & Dictionaries, as Ansible is written in Python and uses these [data structures](https://docs.python.org/3.6/tutorial/datastructures.html).
+
+Basics of Variable Names:
+
+1. Variables should be numbers, letters, and underscores. They should always start with a letter
+
+        Good variable
+
+        http_port: 80
+
+        Bad varibles:
+
+        80_port (starts with a number)
+        http-port (no underscore)
+
+
+2. There are also reserved words that have special meaning in Python and Ansible. Take a look at the list [here](https://docs.ansible.com/ansible/latest/user_guide/playbooks_variables.html#what-makes-a-valid-variable-name)
+
+
+
+__Review of Variables used thus far:__
+
+
+
+1. Variables in Inventory File:
+
+        [dev1]
+        192.168.33.13
+
+        [dev2]
+        192.168.33.14
+
+        [control:children]
+        dev1
+        dev2
+__NOTE__: The Inventory File is written using INI format, BUT it can be written in YAML as well.
+
+2. Variables in Playbooks:
+
+   The \{\{ item \}\} loops that we see in our current playbook are a type of Variable.
+
+   Jinja2: This is a templating system used in many programming languages and web frameworks today. It is used in the Python world in Flask, Django, and obviously in Ansible.
+
+   We define variables and then use the Jinja templating to utlize the variables.
+
+    Basic example:
+
+    Variable:
+
+    http_port: 80
+
+    Jinja template:
+
+    The server's http port is \{\{ http_port \}\}
+
+    Ansible Task Example:
+
+            ---
+            - name: configure firewalld ports
+              firewalld:
+                port: "{{ http_port }}"
+                permanent: true
+                state: enabled
+
+
+
+    Variables can also be placed directly into a playbook:
+
+            ---
+            - hosts: dev1,dev2
+              vars:
+                http_port: 80
+
+3. Variables in Roles:
+
+
+    Let's look at the Nginx Role that we used from Ansible Galaxy: https://galaxy.ansible.com/geerlingguy/nginx
+
+    Each role in Ansible Galaxy shows you how to install the role on your computer (you can copy/paste the ansible-galaxy install command).
+
+    It shows that OS Platforms supported, the versions of the Role (the developer has versions of the role that he has deployed)
+
+    It also shows the minimum version of Ansible allowed (this is important as it might require you to upgrade Ansible on your control machine, etc.)
+
+    There are also links to the Github repo where the code is [stored](https://github.com/geerlingguy/ansible-role-nginx).
+
+    As noted in the README in the Nginx role, the Variables are in the defaults/main.yml.
+
+
+    You can overwrite the variables in the defaults/main.yml file to suit your needs when installing the Nginx role.
+
+
+    __Variable Precedence__:
+
+    What happens if you have variables you define in your playbook, inventory, and roles? Ansible uses Variable Precedence (kinda like Orders of Operation in Math) to determine which varaible to use.
+
+    Here is the order of precedence from least to greatest (the last listed variables winning prioritization): [from docs](https://docs.ansible.com/ansible/latest/user_guide/playbooks_variables.html#variable-precedence-where-should-i-put-a-variable)
+
+
+        - role defaults
+        - inventory file or script group vars
+        - inventory group_vars/all
+        - playbook group_vars/all
+        - inventory group_vars/*
+        - playbook group_vars/*
+        - inventory file or script host vars
+        - inventory host_vars/*
+        - playbook host_vars/*
+        - host facts / cached set_facts
+        - play vars
+        - play vars_prompt
+        - play vars_files
+        - role vars (defined in role/vars/main.yml)
+        - block vars (only for tasks in block)
+        - task vars (only for the task)
+        - include_vars
+        - set_facts / registered vars
+        - role (and include_role) params
+        - include params
+        - extra vars (always win precedence)
+
+---
+---
+
+#### Exercises, Exploration, and Experimentation:
+
+---
+
+Sometimes the best way to learn is to experiment. Using the control and dev machines you created, try the exercises below.
+
+1. Find a role on Ansible-Galaxy for MySQL (compatible with Centos/RHEL 7) and install to the roles directory you created above on the control machine. Example: https://galaxy.ansible.com/geerlingguy/mysql
+2. Add the mysql role to your playbook on the control machine
+3. Run the playbook again
+4. Try changing the variables for the role so that the defaults are not used
+5. How can you install nginx if apache is installed on a machine already?
+6. Find other roles that you might need in your daily work on Ansible Galaxy and test installing them
+7. Look through documentation and online resources to find out how to get information or "setup" information about a node machine (i.e. host you are trying to configure using ansible)
+

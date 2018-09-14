@@ -176,7 +176,7 @@ __NOTE__: There are other ways to setup SSH keys, but understanding some of the 
 
         $ vagrant ssh dev1
         $ sudo su
-        $ sudo vi /etc/sshd/sshd_config
+        $ sudo vi /etc/ssh/sshd_config
 
 
     From within sshd_config file:

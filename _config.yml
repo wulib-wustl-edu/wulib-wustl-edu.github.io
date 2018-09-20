@@ -3,7 +3,7 @@ name: LTS
 email: cfu-liblts@wustl.edu
 description: Learn Agile, DevOps, Git, and More
 
-remote_theme: jameshamann/jekyll-material-theme
+theme: jekyll-material-theme
 
 parallax_image_one: assets/images/startup3.jpg # These are the images used for the parallax background
 parallax_image_two: assets/images/startup3.jpg
@@ -45,10 +45,17 @@ project_seven: TDD
 project_seven_description: Learn more about Test-Driven Development
 project_seven_url: /tdd/
 
-
 project_eight: Configuration Management
 project_eight_description: Learn to use Configuration Management Tools like Ansible
 project_eight_url: /config/
+
+project_nine: Linux Command Line & Troubleshooting
+project_nine_description: Learn the basics of the Linux Command Line & Troubleshooting techniques
+project_nine_url: /linux/
+
+project_ten: Windows Command Line & Troubleshooting
+project_ten_description: Learn the basics of the Windows Command Line & Troubleshooting techniques
+project_ten_url: /windows/
 
 
 

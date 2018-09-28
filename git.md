@@ -378,7 +378,7 @@ __Short Version:__ a team member would fork the main project repository, clone t
 
 4. Once the project is forked, you should see it listed on your Github repo page.
 
-   > *__YourGithubAccountName/NameOfProjectYouForked__*tp
+   > *__YourGithubAccountName/NameOfProjectYouForked__*
 
    > Forked from *__GithubAccountOfOriginalMaintainer/NameOfProject__*
 
@@ -635,67 +635,129 @@ Merge Conflict Example:
 ---
 ---
 
-### Discussion:
+### Branching revisited:
 ---
 
-
-1. Best Practices & Standards for the WashU Libraries
-
-    Recommendation/Proposal:
-
-    Every project should have:
+__NOTE__: If you want to follow along, perform this work on your Fork of the washu_testproject
 
 
-        - README.md
-        - Contributing.md
-        - License.md (see [choosealicense.com](https://choosealicense.com))
-        - Vagrantfile
-        - Tests
+- It is important to remember that branches "inherit" the work from the branch you checked out the new branch from...for example:
+
+    If you create a new branch from the master branch, it will inherit all code/work from the master branch:
+
+        $ git status
+        On branch master
+        Your branch is up to date with 'origin/master'.
+
+        nothing to commit, working tree clean
+
+        $ git checkout -b branch1
+        Switched to a new branch 'branch1'
+
+    Edit Readme File (and imagine other work being done on other files):
+
+        $ git status
+        On branch branch1
+        Changes not staged for commit:
+          (use "git add <file>..." to update what will be committed)
+          (use "git checkout -- <file>..." to discard changes in working directory)
+
+        	modified:   README.md
+
+        no changes added to commit (use "git add" and/or "git commit -a")
+
+        $ git add README.md
+        $ git commit -m 'added branch1 edits to readme'
+        $ git push origin branch1
+
+    __NOTE__: This has not been merged into the master branch
+
+    Checkout the master branch again:
+
+        $ git checkout master
+        Switched to branch 'master'
+        Your branch is up to date with 'origin/master'.
+
+    Create a new branch (or checkout another branch):
+
+        $ git checkout -b devbranch
 
 
-        - Every README.md should have:
+    Perform some work on devbranch, add, commit, push up branch to remote:
 
-        - Project Title
-
-        - Basic Description
-
-        - Prerequisites: describe dependencies or other software that needs to be installed before running the application/code
-
-            > Example: Samvera/Hyrax requires ffmpeg, imagemagick, libreoffice, solr, fedora, etc. before it will even run
-
-        - Installation: provide step by step procedure for how to get the application running in a development environment. Also, show how to prove installation is successful
-
-        - Tests: show how to run (automated) tests against the system (see Test-Driven Development)
-
-        - Deployment: document how to deploy the application to a live system
-
-        - Built with: document what the application was built with (i.e. Python, Flask, SQLAlchemy, etc.) as well as any APIs used
-
-        - Contributing: document in the Contributing.md file how people can contribute, process/requirements for pull requests, code of conduct, etc.
-
-        - License: document the License used with a link to the License.md
-
-        - More Info: links to resources, wiki pages, etc.
-
-        - Support: contact info if required/necessitated
+        $ git add README.md
+        $ git commit -m 'devbranch work added'
+        $ git push origin devbranch
 
 
-        Every Gitlab Project:
+    Checkout a new branch from the devbranch, make some edits, and push up:
 
-        - Connected with Slack Notification Webhook
-        - Project should document issues/to-dos/completed on project issue board
-        - Gitlab Runner (CI/CD)
-        - Each Gitlab Project Wiki page should document common troubleshooting resources, system configurations, user documentation, helpful hints, etc.
+        $ git checkout -b devchild
+        $ git add .
+        $ git commit -m 'devchild edits'
+
+    __NOTE__: the devchild branch has all the work from master, devbranch, and its own work NOT branch1 work
+
+
+    Let's merge branch1 into master:
+
+        $ git checkout master
+        $ git merge branch1
+        $ git push origin master
 
 
 
-2. Workflows & Collaboration
+
+---
+---
+
+### Git Log
+---
+
+1. Looking at the logs can help make sense of all the work:
+
+        $ git log
+
+    Helpful options/flags:
+
+      --oneline : just shows commit message
+      --graph : shows visual/graph of the commits and branches
+      --abbrev-commit : shows shortened/prefix version of the commit object name
+
+   git log shows the commit object name (unique id of commit), the commiter's name and email, date of commit, and the commit message
 
 
-    * Centralized Workflow
-    * Feature Branch Workflow
-    * GitFlow
-    * Forking Workflow
+2. Finding the commit object name/id is helpful if you need to reset head or to checkout a previous version of code
+
+   git log with full commit object name:
+
+       commit c5635ec6d0897a618e8059813181ff9c617ea402
+       Merge: 43b8d09 a2a5b17
+       Author: <name here> <email here>
+       Date:   Fri Sep 7 11:51:08 2018 -0500
+
+            Merge branch 'master' into master
+
+   git log with `--abbrev-commit`
+
+        commit c5635ec
+        Merge: 43b8d09 a2a5b17
+        Author: Phil Suda <phil.suda@wustl.edu>
+        Date:   Fri Sep 7 11:51:08 2018 -0500
+
+            Merge branch 'master' into master
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 ------------

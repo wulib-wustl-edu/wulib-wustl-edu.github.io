@@ -705,7 +705,9 @@ __NOTE__: If you want to follow along, perform this work on your Fork of the was
         $ git merge branch1
         $ git push origin master
 
+- __Go to your washu_testproject fork on Github. Click on Insights >> Network.__
 
+    __You should see a graph showing your different branch and how they are connected (or not)__
 
 
 ---
@@ -746,6 +748,11 @@ __NOTE__: If you want to follow along, perform this work on your Fork of the was
         Date:   Fri Sep 7 11:51:08 2018 -0500
 
             Merge branch 'master' into master
+
+
+3. There are many different flags/options to use with git log. Use the `--help` flag to review them.
+
+        $ git log --help
 
 
 
